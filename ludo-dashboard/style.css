@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   MAIN BOARD
+========================= */
+
+.ludo-board {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    background: white;
+    border: 2px solid #222;
+}
+
+
+/* =========================
+   HOME AREAS
+========================= */
+
+.home {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Red */
+
+.red {
+    top: 0;
+    left: 0;
+    background: #ff1515;
+}
+
+
+/* Green */
+
+.green {
+    top: 0;
+    right: 0;
+    background: #08a82e;
+}
+
+
+/* Blue */
+
+.blue {
+    bottom: 0;
+    left: 0;
+    background: #08aeef;
+}
+
+
+/* Yellow */
+
+.yellow {
+    bottom: 0;
+    right: 0;
+    background: #ffe000;
+}
+
+
+/* =========================
+   INNER WHITE BOX
+========================= */
+
+.inner-box {
+    width: 65%;
+    height: 65%;
+
+    background: white;
+    border: 1px solid #777;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 18px;
+    padding: 20px;
+}
+
+
+/* =========================
+   TOKENS
+========================= */
+
+.token {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    justify-self: center;
+    align-self: center;
+
+    border: 2px solid rgba(0, 0, 0, 0.35);
+}
+
+
+/* Token colors */
+
+.red .token {
+    background: #ff1111;
+}
+
+.green .token {
+    background: #08a82e;
+}
+
+.blue .token {
+    background: #09aeea;
+}
+
+.yellow .token {
+    background: #ffe000;
+}
+
+
+/* =========================
+   PATHS
+========================= */
+
+.path {
+    position: absolute;
+
+    display: grid;
+
+    background: white;
+}
+
+
+/* Each cell */
+
+.path > div {
+    border: 1px solid #777;
+}
+
+
+/* =========================
+   TOP PATH
+========================= */
+
+.top-path {
+    width: 20%;
+    height: 40%;
+
+    left: 40%;
+    top: 0;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+
+/* =========================
+   BOTTOM PATH
+========================= */
+
+.bottom-path {
+    width: 20%;
+    height: 40%;
+
+    left: 40%;
+    bottom: 0;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+
+/* =========================
+   LEFT PATH
+========================= */
+
+.left-path {
+    width: 40%;
+    height: 20%;
+
+    left: 0;
+    top: 40%;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+/* =========================
+   RIGHT PATH
+========================= */
+
+.right-path {
+    width: 40%;
+    height: 20%;
+
+    right: 0;
+    top: 40%;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+/* =========================
+   COLORED PATH CELLS
+========================= */
+
+.green-cell {
+    background: #08a82e;
+}
+
+.red-cell {
+    background: #ff1515;
+}
+
+.blue-cell {
+    background: #08aeef;
+}
+
+.yellow-cell {
+    background: #ffe000;
+}
+
+
+/* =========================
+   CENTER
+========================= */
+
+.center {
+    position: absolute;
+
+    width: 20%;
+    height: 20%;
+
+    left: 40%;
+    top: 40%;
+
+    background: white;
+
+    border: 1px solid #555;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   TRIANGLES
+========================= */
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+}
+
+
+/* Red triangle */
+
+.red-triangle {
+    top: 0;
+    left: 0;
+
+    border-width: 60px 60px 0 0;
+    border-color: #ff1515 transparent transparent transparent;
+}
+
+
+/* Green triangle */
+
+.green-triangle {
+    top: 0;
+    right: 0;
+
+    border-width: 0 60px 60px 0;
+    border-color: transparent #08a82e transparent transparent;
+}
+
+
+/* Blue triangle */
+
+.blue-triangle {
+    bottom: 0;
+    left: 0;
+
+    border-width: 0 0 60px 60px;
+    border-color: transparent transparent #08aeef transparent;
+}
+
+
+/* Yellow triangle */
+
+.yellow-triangle {
+    bottom: 0;
+    right: 0;
+
+    border-width: 60px 0 0 60px;
+    border-color: transparent transparent transparent #ffe000;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+
+    .ludo-board {
+        width: 95vw;
+        height: 95vw;
+    }
+
+    .inner-box {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .token {
+        width: 25px;
+        height: 25px;
+    }
+
+    .red-triangle {
+        border-width: 45px 45px 0 0;
+    }
+
+    .green-triangle {
+        border-width: 0 45px 45px 0;
+    }
+
+    .blue-triangle {
+        border-width: 0 0 45px 45px;
+    }
+
+    .yellow-triangle {
+        border-width: 45px 0 0 45px;
+    }
+}

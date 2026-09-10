@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Main Container */
+.chess-container {
+    width: 700px;
+}
+
+
+/* Top & Bottom Alphabets */
+.top-labels,
+.bottom-labels {
+    display: grid;
+    grid-template-columns: 30px repeat(8, 80px) 30px;
+
+    height: 40px;
+
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.top-labels span,
+.bottom-labels span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Board Row */
+.board-row {
+    display: flex;
+}
+
+
+/* Left & Right Numbers */
+.side-labels {
+    width: 30px;
+    height: 640px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Chess Board */
+.board {
+    width: 640px;
+    height: 640px;
+
+    display: grid;
+
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+}
+
+
+/* Chess Squares */
+.board div {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    font-size: 48px;
+}
+
+
+/* Black Squares */
+.board .black {
+    background-color: black;
+}
+
+
+/* White Pieces */
+.board div {
+    color: black;
+}
+
+
+/* White pieces on black squares */
+.board .black {
+    color: white;
+}
